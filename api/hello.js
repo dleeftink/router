@@ -2,7 +2,7 @@
 
 const axios = require('axios');
 const ax = axios.default;
-const all = require('./src/util');
+const all = require('../src/util');
 
 module.exports = async (req, res) => {
 
