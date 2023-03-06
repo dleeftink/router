@@ -1,20 +1,28 @@
-/*const ax = require("axios");
-
-module.exports = async (req, res) => {
-
-  const test = await ax('https://api.ipify.org/?format=json');
-
-  let dat = Math.random()
-  let temp = await fetch('https://api.ipify.org/?format=json').then(d=>d.json())
-  res.send({...temp,test,dat})
-  
-};*/
-
 const axios = require('axios');
 
 const ax = axios.default;
 
-export default async function handler(req, res) {
-  let temp = (await ax("https://api.ipify.org/?format=json")).data;
-  res.status(200).json({ name: 'John Doe' ,VERSION:axios.VERSION, temp})
-}
+const allowCors = fn => async (req, res) => {
+    res.setHeader('Access-Control-Allow-Credentials', true)
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    // another common pattern
+    // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+    )
+    if (req.method === 'OPTIONS') {
+      res.status(200).end()
+      return
+    }
+    return await fn(req, res)
+  }
+
+module.exports = allowCors(async (req, res) => {
+
+    let temp = (await ax("https://api.ipify.org/?format=json")).data;
+    res.send({temp})
+    
+});
+
