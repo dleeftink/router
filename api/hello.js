@@ -1,4 +1,4 @@
-import { default as needle } from 'needle';
+const needle = require('needle')
 
 export default async (req, res) => {
 
