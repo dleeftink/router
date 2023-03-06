@@ -1,6 +1,6 @@
 const ax = require("axios");
 
-export default async (req, res) => {
+module.exports = async (req, res) => {
 
   const test = await ax('https://api.ipify.org/?format=json');
 
