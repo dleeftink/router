@@ -4,6 +4,6 @@ export default async (req, res) => {
 
   let dat = Math.random()
   let temp = await fetch('https://api.ipify.org/?format=json').then(d=>d.json())
-  res.send({...temp,dat,VERSION:axios.VERSION})
+  res.send({...temp,dat,VERSION:axios.VERSION,more:dat})
   
 };
