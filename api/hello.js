@@ -1,4 +1,4 @@
-import { allowCors } from './src/utils.js';
+import { allowCors } from '../src/utils.js';
 
 const axios = require('axios');
 
