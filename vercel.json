@@ -13,11 +13,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "api/hello.js": {
-      "memory": 32,
-      "maxDuration": 5
-    }
-  }
+  ]
 }
