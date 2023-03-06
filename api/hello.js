@@ -1,5 +1,6 @@
 module.exports = async (req, res) => {
 
-  res.send({hello:'world'})
+  let temp = await fetch('https://api.ipify.org/?format=json').then(d=>d.json())
+  res.send({...temp})
   
 };
