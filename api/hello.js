@@ -1,9 +1,9 @@
-const needle = require('needle')
+import path from 'path';
 
 export default async (req, res) => {
 
   let dat = Math.random()
   let temp = await fetch('https://api.ipify.org/?format=json').then(d=>d.json())
-  res.send({...temp,dat,needle})
+  res.send({...temp,dat,path})
   
 };
