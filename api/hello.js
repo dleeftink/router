@@ -1,7 +1,8 @@
-import * as all from '../src/utils.js';
+//import * as all from '../src/utils.js';
 
 const axios = require('axios');
 const ax = axios.default;
+const all = require('./src/util');
 
 module.exports = async (req, res) => {
 
