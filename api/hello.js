@@ -1,4 +1,4 @@
-//import * as all from '../src/utils.js';
+import { select } from '@/src/utils.js'
 
 const axios = require('axios');
 const ax = axios.default;
