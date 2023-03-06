@@ -7,7 +7,6 @@ export default async function screenshot(url) {
     executablePath: await chrome.executablePath,
     headless: chrome.headless,
   };
-
   const browser = await puppeteer.launch(options);
   const page = await browser.newPage();
   await page.setViewport({ width: 2000, height: 1000 });
