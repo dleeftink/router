@@ -1,4 +1,4 @@
-import * as all from 'utils.js';
+import * as all from './utils.js';
 
 const axios = require('axios');
 const ax = axios.default;
