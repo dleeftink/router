@@ -20,6 +20,6 @@ function allowCors(fn) {
   };
 }
 
-export default {
+module.exports = {
   allowCors
 }
