@@ -4,8 +4,6 @@ const all = require('../src/utils');
 const axios = require('axios');
 const ax = axios.default;
 
-// const all = require('../src/util');
-
 module.exports = async (req, res) => {
 
   let temp = (await ax('https://api.ipify.org/?format=json')).data;
