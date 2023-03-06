@@ -1,7 +1,7 @@
 import chrome from 'chrome-aws-lambda';
 import puppeteer from 'puppeteer-core';
 
-export default async function screenshot(url: string) {
+export default async function screenshot(url) {
   const options = {
     args: chrome.args,
     executablePath: await chrome.executablePath,
