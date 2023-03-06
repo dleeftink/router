@@ -19,10 +19,10 @@ const allowCors = fn => async (req, res) => {
     return await fn(req, res)
   }
 
-module.exports = allowCors(async (req, res) => {
+module.exports = async (req, res) => {
 
     let temp = (await ax("https://api.ipify.org/?format=json")).data;
     res.send({temp})
-    
-});
+
+};
 
