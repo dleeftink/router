@@ -1,11 +1,11 @@
-// const ax = require("axios");
-
-// const test = ax('https://api.ipify.org/?format=json');
+const ax = require("axios");
 
 export default async (req, res) => {
 
+  const test = await ax('https://api.ipify.org/?format=json');
+
   let dat = Math.random()
   let temp = await fetch('https://api.ipify.org/?format=json').then(d=>d.json())
-  res.send({...temp/*,test:await test*/,dat})
+  res.send({...temp,test,dat})
   
 };
