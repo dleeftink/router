@@ -1,4 +1,4 @@
-function allowCors() {
+export function allowCors(fn) {
   return (fn) => async (req, res) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -18,8 +18,4 @@ function allowCors() {
     }
     return await fn(req, res);
   };
-}
-
-module.exports = {
-  allowCors
 }
