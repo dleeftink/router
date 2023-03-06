@@ -10,5 +10,10 @@
         { "key": "Cache-Control", "value": "s-maxage=1, stale-while-revalidate=1" }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "api/hello.js": {
+      "memory": 32,
+      "maxDuration": 5
+    }
 }
