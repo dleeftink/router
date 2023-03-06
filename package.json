@@ -17,5 +17,5 @@
     "clean-cache": "rimraf .next",
     "rimraf": "./node_modules/rimraf/bin.js",
     "clean": "yarn prep && rimraf node_modules"
-},
+  }
 }
