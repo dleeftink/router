@@ -7,6 +7,6 @@ const ax = axios.default;
 module.exports = async (req, res) => {
 
   let ip = (await ax('https://api.ipify.org/?format=json')).data;
-  res.send({ ...ip, fn:select(1),oi:Math.random(),req});
+  res.send({ ...ip, fn:select(1),oi:Math.random()});
 
 };
