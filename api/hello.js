@@ -7,6 +7,6 @@ const ax = axios.default;
 module.exports = async (req, res) => {
 
   let temp = (await ax('https://api.ipify.org/?format=json')).data;
-  res.send({ temp, fn:all.toString() });
+  res.send({ temp, fn:all.toString(),oi:1 });
 
 };
