@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
 
   let prx = new URL(new URL(req.url).pathname.slice(1) || '1.1.1.1:8080');
 
-  let prox = (
+  let prox = {} /*(
     await axios.get('https://api.ipify.org/?format=json', {
       proxy: {
         protocol: 'http',
@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
         port: prx.port || 8080,
       },
     })
-  )?.data;
+  )?.data;*/
 
-  res.send({ ipi, geo, prox, fn: select(1), d: Math.random() });
+  res.send({ ipi, geo, prx,prox, fn: select(1), d: Math.random() });
 };
