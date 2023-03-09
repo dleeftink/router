@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
     await axios.get('https://api.ipify.org/?format=json', {
       proxy: {
         protocol: 'http',
-        host: '128.199.202.122',
+        host: '149.129.239.170',
         port: 8080,
       },
     })
