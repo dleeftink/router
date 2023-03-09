@@ -8,17 +8,17 @@ module.exports = async (req, res) => {
   let ipi = (await ax('https://api.ipify.org/?format=json')).data;
   let geo = (await ax('http://ipwho.is')).data;
 
-  let prx = new URL('https://x.x/' + req.url);
+  let prx = new URL('https://x.x' + req.url);
 
-  let prox = {} /*(
+  let prox = (
     await axios.get('https://api.ipify.org/?format=json', {
       proxy: {
-        protocol: 'http',
-        host: prx.hostname,
-        port: prx.port || 8080,
+        protocol: prx.searchParams.get('protocol') || 'http',
+        host: prx.searchParams.get('host') || '1.1.1.1',
+        port: prx.searchParams.get('port') || 8080,
       },
     })
-  )?.data;*/
+  )?.data;
 
-  res.send({ ipi, geo, temp:prx.toString(), prox, fn: select(1), d: Math.random() });
+  res.send({ ipi, geo, prox, prox, fn: select(1), d: Math.random() });
 };
