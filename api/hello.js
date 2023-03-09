@@ -20,5 +20,5 @@ module.exports = async (req, res) => {
     })
   )?.data;*/
 
-  res.send({ ipi, geo, temp:req.url, prox, fn: select(1), d: Math.random() });
+  res.send({ ipi, geo, temp:req, prox, fn: select(1), d: Math.random() });
 };
