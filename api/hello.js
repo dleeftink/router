@@ -6,14 +6,16 @@ const ax = axios.default;
 
 module.exports = async (req, res) => {
   let ipi = (await ax('https://api.ipify.org/?format=json')).data;
-  let geo = (await ax('http://ipwho.is')).data; ;
+  let geo = (await ax('http://ipwho.is')).data;
+
+  let prx = new URL(new URL(req.url).pathname.slice(1) || '1.1.1.1:8080');
 
   let prox = (
     await axios.get('https://api.ipify.org/?format=json', {
       proxy: {
         protocol: 'http',
-        host: '117.160.250.138', 
-        port: 8080,
+        host: prx.hostname,
+        port: prx.port || 8080,
       },
     })
   )?.data;
