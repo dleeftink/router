@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
   let ipi = (await ax('https://api.ipify.org/?format=json')).data;
   let geo = (await ax('http://ipwho.is')).data;
 
-  let prx = new URL(new URL(req.url).pathname.slice(1) || '1.1.1.1:8080');
+  let prx = {};//new URL(new URL(req.url).pathname.slice(1) || '1.1.1.1:8080');
 
   let prox = {} /*(
     await axios.get('https://api.ipify.org/?format=json', {
@@ -20,5 +20,5 @@ module.exports = async (req, res) => {
     })
   )?.data;*/
 
-  res.send({ ipi, geo, prx,prox, fn: select(1), d: Math.random() });
+  res.send({ ipi, geo, temp:req.url, prox, fn: select(1), d: Math.random() });
 };
