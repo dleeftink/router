@@ -12,8 +12,8 @@ module.exports = async (req, res) => {
     await axios.get('https://api.ipify.org/?format=json', {
       proxy: {
         protocol: 'http',
-        host: '149.129.239.170',
-        port: 8080,
+        host: '170.244.25.52', 
+        port: 8888,
       },
     })
   )?.data;
